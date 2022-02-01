@@ -14,6 +14,7 @@ public static void main(String[] args) {
 }
 
 private void sort(Sorting sorting){
+	
 	sorting.sort();
 }
 
