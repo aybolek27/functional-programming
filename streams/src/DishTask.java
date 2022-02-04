@@ -11,17 +11,21 @@ public static void main(String[] args) {
 	
 	//Print all dish's name that has less than 400 calories
 	System.out.println("****************************************");
-	
 	DishData.getAll().stream()
 			.filter(dish -> dish.getCalories() <400)
 			.map(Dish::getName)
 			.forEach(System.out::println);
 	
+	//Print all dish's name and calories that has less than 400 calories
+	System.out.println("****************************************");
+	DishData.getAll().stream()
+			.filter(dish -> dish.getCalories() <400)
+			.map(Dish -> Dish.getName()+"---"+Dish.getCalories())
+			.forEach(System.out::println);
 	
 	
 	//Print the length of the name of each dish
 	System.out.println("****************************************");
-	
 	DishData.getAll().stream()
 			.map(Dish::getName)
 			.map(String::length)
@@ -30,7 +34,6 @@ public static void main(String[] args) {
 	
 	//Print Three High Caloric Dish Name(>300)
 	System.out.println("****************************************");
-	
 	DishData.getAll().stream()
 			.filter(dish -> dish.getCalories() >400)
 			.map(Dish::getName)
@@ -45,6 +48,7 @@ public static void main(String[] args) {
 			.map(Dish::getName)
 			.forEach(System.out::println);
 	
+	
 	//Print all dish name that are below 400 Calories in descending order
 	System.out.println("****************************************");
 	DishData.getAll().stream()
@@ -52,7 +56,6 @@ public static void main(String[] args) {
 			.sorted(comparing(Dish::getCalories).reversed())
 			.map(Dish::getName)
 			.forEach(System.out::println);
-	
 	
 	
 	
