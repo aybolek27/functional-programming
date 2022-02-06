@@ -98,6 +98,6 @@ public static void main(String[] args) {
 			.collect(Collectors.groupingBy(Dish::getType));
 	System.out.println(groupedDishes);
 	
-}
+	}
 
 }
